@@ -66,7 +66,7 @@ func main() {
 }
 
 // number func return sum and avg of prime
-func number(num ...int) (int, int) {
+func number(num ...int) (int, float32) {
 	sum := 0
 	count := 0
 	for _, n := range num {
@@ -75,7 +75,7 @@ func number(num ...int) (int, int) {
 			count++
 		}
 	}
-	return sum, sum / count
+	return sum, (float32(sum) / float32(count))
 }
 
 // isPrime func
