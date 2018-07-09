@@ -58,33 +58,63 @@ func main() {
 	// Hello("Gear", "GG", 21)
 	// Prinln(0, "a", "b", "c")
 
-	s, s2 := Hell()
-	fmt.Println(s + s2)
+	// s, s2 := Hell()
+	// fmt.Println(s + s2)
+
+	sum, avg := number(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+	fmt.Println(sum, avg)
 }
 
-// Hell func
-func Hell() (string, string) {
-	return "Wow", "Voooo"
-}
-
-// CoditionFunc func
-func CoditionFunc(i int) int {
-	if b := i + 5; b < 5 {
-		fmt.Println(false)
-		return 0
+// number func return sum and avg of prime
+func number(num ...int) (int, int) {
+	sum := 0
+	count := 0
+	for _, n := range num {
+		if isPrime(n) {
+			sum += n
+			count++
+		}
 	}
-	return 1
+	return sum, sum / count
 }
 
-// Hello func
-func Hello(name, surname string, age int) {
-	fmt.Println("Hello", name, surname, age)
-}
-
-// Prinln func
-func Prinln(num int, a ...string) {
-	print(num)
-	for _, e := range a {
-		print(e)
+// isPrime func
+func isPrime(num int) bool {
+	count := 0
+	for i := 1; i <= num; i++ {
+		if num%i == 0 {
+			count++
+		}
 	}
+	if count == 2 {
+		return true
+	}
+	return false
 }
+
+// // Hell func
+// func Hell() (string, string) {
+// 	return "Wow", "Voooo"
+// }
+
+// // CoditionFunc func
+// func CoditionFunc(i int) int {
+// 	if b := i + 5; b < 5 {
+// 		fmt.Println(false)
+// 		return 0
+// 	}
+// 	return 1
+// }
+
+// // Hello func
+// func Hello(name, surname string, age int) {
+// 	fmt.Println("Hello", name, surname, age)
+// }
+
+// // Prinln func
+// func Prinln(num int, a ...string) {
+// 	print(num)
+// 	for _, e := range a {
+// 		print(e)
+// 	}
+// }
